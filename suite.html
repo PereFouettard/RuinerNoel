@@ -29,7 +29,37 @@ h1 {
 <body>
 
 <h1 class="center">Secret du père fouettard - Partie 2</h1>
-<p class="center">"Où sont nos cadeaux?"</p>
-<p class="center">Vous ne le saurez, que si vous demandez à la bonne personne.</p>
+<p class="center">Écoutez moi, trouvez moi puis endormez moi.</p>
+
+<div class="center">
+<input type="text" id="input"/>
+<button onclick="buttonClick()">Débloquer</button>
+</div>
+<div class="center">
+<p id="reponse" class="center"></p>
+<p id="bad" class="bad center"></p>
+<a id="continue" href="fin.html" class="center white hidden">Continuer</a>
+</div>
+
+
+<script>
+function buttonClick() {
+    var success = document.getElementById("input").value == "abcd";
+    
+    if(success)
+    {
+        document.getElementById("reponse").innerHTML = "Secret débloqué!";
+        document.getElementById("continue").style.display = "block";
+        document.getElementById("bad").innerHTML = "";
+    }
+    else
+    {
+        document.getElementById("reponse").innerHTML = "";
+        document.getElementById("continue").style.display = "none";
+        document.getElementById("bad").innerHTML = "ÉCHEC";
+    }
+}
+</script>
+
 </body>
 </html>
